@@ -10,8 +10,6 @@ INSERT INTO public.banco(numero, nome)VALUES (1,'Banco Bankpar S.A.');
 INSERT INTO public.banco(numero, nome)VALUES (740,'Banco Barclays S.A.');
 INSERT INTO public.banco(numero, nome)VALUES (107,'Banco BBM S.A.');
 
---select * from cliente_transacoes
-
 --Populando a Tabela Tipo_Transação
 INSERT INTO public.tipo_transacao (nome) VALUES ('Débito');
 INSERT INTO public.tipo_transacao (nome) VALUES ('Crédito');
