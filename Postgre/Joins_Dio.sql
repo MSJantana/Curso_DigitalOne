@@ -34,3 +34,37 @@ join cliente
 	on cliente.numero = conta_corrente.cliente_numero;
 
 ---Incluir no Select Tipos de Transação e Transações dos Clientes
+select banco.nome as Banco, 
+		agencia.nome as Agencia_banco, 
+		conta_corrente.numero as Conta,
+		conta_corrente.digito as Digito,
+		cliente_transacoes.data_criacao as Data_Transação,
+		cliente_transacoes.valor as Valor_Transação,
+		cliente.nome as Nome_cliente,
+		tipo_transacao.nome as Tipo_Transação
+from banco
+join agencia
+on agencia.banco_numero = banco.numero
+join conta_corrente 
+	on conta_corrente.banco_numero = banco.numero
+	and conta_corrente.agencia_numero = agencia.numero
+join cliente
+	on cliente.numero = conta_corrente.cliente_numero
+join cliente_transacoes
+	on cliente_transacoes.cliente_numero = cliente.numero
+join tipo_transacao
+	on tipo_transacao.id = cliente_transacoes.tipo_transacao_id
+	order by banco.numero, cliente.nome, cliente_transacoes.data_criacao;
+	
+-- Conceito de CTE
+with cliente_e_transacoes as (
+	select cliente.nome as cliente_nome,
+			tipo_transacao.nome as tipo_transacao_nome,
+			cliente_transacoes.valor as tipo_transacao_valor
+	from cliente_transacoes
+	join cliente on cliente.numero = cliente_transacoes.cliente_numero
+	join tipo_transacao on tipo_transacao.id = cliente_transacoes.tipo_transacao_id
+)
+select cliente_nome, tipo_transacao_nome,tipo_transacao_valor
+from cliente_e_transacoes;
+
