@@ -119,3 +119,7 @@ CASO ESTEJA USANDO MAVEN (ou nenhum gerenciador de pacotes) DEVERÁ SER UTILIZAD
 
 - No gradle deve-se adicionar no "build.gradle" (na parte de "dependencies") a linha abaixo
 compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.17'
+
+jdbc:mysql://localhost:3306/bos_covid19?zeroDateTimeBehavior=convertToNull
+
+jdbc:mysql://localhost:3306/java?useTimezone=true&serverTimezone=UTC
