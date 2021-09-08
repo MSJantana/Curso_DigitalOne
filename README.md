@@ -8,4 +8,5 @@
 - [ ] Inicio do Curso PostGre - Data de Criação 13/08
 - [ ] Curso JPA e JDBC - Data de Criação 20/08
 - [ ] Spring Boot - Data de Criação 03/09
+- [ ] Spring Boot Config - Data de Criação 08/09
 
