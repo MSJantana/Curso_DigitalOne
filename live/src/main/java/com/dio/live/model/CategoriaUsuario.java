@@ -14,7 +14,7 @@ import javax.persistence.Id;
 @Builder
 @Entity
 @Audited
-public class JornadaTrabalho {
+public class CategoriaUsuario {
     @Id
     private long id;
     private String descricao;

@@ -1,10 +1,10 @@
 package com.dio.live.model;
 
 import lombok.*;
-import org.hibernate.envers.Audited;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Getter
 @Setter
@@ -13,9 +13,10 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 @Builder
 @Entity
-@Audited
-public class JornadaTrabalho {
+public class Localidade {
     @Id
     private long id;
+    @ManyToOne
+    private NivelAcesso nivelAcesso;
     private String descricao;
 }
